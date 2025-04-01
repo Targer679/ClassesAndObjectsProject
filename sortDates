@@ -1,0 +1,68 @@
+import java.util.ArrayList;
+
+class Date{
+    int year, month, day;
+
+    Date(int day, int month, int year){
+        this.day=day;
+        this.month=month;
+        this.year=year;
+    }
+    void isValidDate(){...
+
+    }
+    void updateDate(int day, int month, int year){...
+
+    }
+    void getDayOfWeek(){...
+    }
+    void calculateDifference(Date otherDate){...
+    }
+    void printDate(){...
+}
+class Sorting {
+    void sortDates(ArrayList<Date> dates){
+        for(int i=0; i<dates.size(); i++){
+            for(int j=i+1; j<dates.size(); j++){
+                if(dates.get(i).year>dates.get(j).year){
+                    Date temp = dates.get(i);
+                    dates.set(i, dates.get(j));
+                    dates.set(j, temp);
+                }
+                else if(dates.get(i).year==dates.get(j).year && dates.get(i).month>dates.get(j).month){
+                    Date temp = dates.get(i);
+                    dates.set(i, dates.get(j));
+                    dates.set(j, temp);
+                }
+                else if(dates.get(i).year==dates.get(j).year && dates.get(i).month==dates.get(j).month && dates.get(i).day>dates.get(j).day){
+                    Date temp = dates.get(i);
+                    dates.set(i, dates.get(j));
+                    dates.set(j, temp);
+                }
+            }
+        }
+        for(Date item : dates){
+            System.out.println(item.day+" "+item.month+" "+item.year);
+        }
+    }
+}
+class Calender {
+    public static void main(String[] args) {
+    Sorting s = new Sorting();
+        ArrayList<Date> dates = new ArrayList<Date>();
+        Date G = new Date(23, 5, 2006);
+        Date H = new Date(29, 2, 2020);
+        Date I = new Date(4, 9, 2023);
+        Date J = new Date(25, 8, 2023);
+        dates.add(G);
+        dates.add(H);
+        dates.add(I);
+        dates.add(J);
+        s.sortDates(dates);
+    }
+}
+OUTPUT:
+23 5 2006
+29 2 2020
+25 8 2023
+4 9 2023
