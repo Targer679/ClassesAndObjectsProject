@@ -1,0 +1,79 @@
+import java.util.ArrayList;
+
+class Date{
+    int year, month, day;
+
+    Date(int day, int month, int year){
+        this.day=day;
+        this.month=month;
+        this.year=year;
+    }
+    void isValidDate(){.
+
+    }
+    void updateDate(int day, int month, int year){...
+    }
+    void getDayOfWeek(){...
+    }
+    void calculateDifference(Date otherDate){...
+    }
+    void printDate(){
+        if(this.month==1){
+            System.out.println("January "+this.day+", "+this.year);
+        }
+        if(this.month==2){
+            System.out.println("February "+this.day+", "+this.year);
+        }
+        if(this.month==3){
+            System.out.println("March "+this.day+", "+this.year);
+        }
+        if(this.month==4){
+            System.out.println("April "+this.day+", "+this.year);
+        }
+        if(this.month==5){
+            System.out.println("May "+this.day+", "+this.year);
+        }
+        if(this.month==6){
+            System.out.println("June "+this.day+", "+this.year);
+        }
+        if(this.month==7){
+            System.out.println("July "+this.day+", "+this.year);
+        }
+        if(this.month==8){
+            System.out.println("August "+this.day+", "+this.year);
+        }
+        if(this.month==9){
+            System.out.println("September "+this.day+", "+this.year);
+        }
+        if(this.month==10){
+            System.out.println("October "+this.day+", "+this.year);
+        }
+        if(this.month==11){
+            System.out.println("November "+this.day+", "+this.year);
+        }
+        if(this.month==12){
+            System.out.println("December "+this.day+", "+this.year);
+        }
+    }
+    
+}
+class Sorting {...
+}
+class Calender {
+    public static void main(String[] args) {
+
+        Date G = new Date(23, 5, 2006);
+        Date H = new Date(29, 2, 2020);
+        Date I = new Date(4, 9, 2023);
+        Date J = new Date(25, 8, 2023);
+        G.printDate();
+        H.printDate();
+        I.printDate();
+        J.printDate();
+    }
+}
+OUTPUT:
+May 23, 2006
+February 29, 2020
+September 4, 2023
+August 25, 2023
