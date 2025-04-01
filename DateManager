@@ -127,15 +127,21 @@ class Date{
     }
     void getDayOfWeek(){
         int b=0;
-        for(int i=1; i<=this.year; i++){
-            if(i%4==0){
+        for(int i=1; i<this.year; i++){
+            if(i%4==0 && i%100!=0 && i%400!=0){
                 b+=366;
             }
-            if(i%4!=0){
+            if(i%4!=0 && i%100!=0 && i%400!=0){
                 b+=365;
             }
+            if(i%100==0 && i%400!=0){
+                b+=365;
+            }
+            if(i%400==0 ){
+                b+=366;
+            }
         }
-        for(int i=0; i<=this.month; i++){
+        for(int i=0; i<this.month; i++){
             if(i==1){
                b+=31;
             }
@@ -178,31 +184,31 @@ class Date{
         }
         b += this.day;
         if(b%7==0){
-            System.out.println("Friday");
+            System.out.println("Sunday.");
         }
         if(b%7==1){
-            System.out.println("Saturday");
+            System.out.println("Monday.");
         }
         if(b%7==2){
-            System.out.println("Sunday");
+            System.out.println("Tuesday.");
         }
         if(b%7==3){
-            System.out.println("Monday");
+            System.out.println("Wednesday.");
         }
         if(b%7==4){
-            System.out.println("Tuesday");
+            System.out.println("Thursday.");
         }
         if(b%7==5){
-            System.out.println("Wednesday");
+            System.out.println("Friday.");
         }
         if(b%7==6){
-            System.out.println("Thursday");
+            System.out.println("Saturday.");
         }
     }
 }
 class Calender {
     public static void main(String[] args) {
-        Date G = new Date(30, 3, 2025);
+        Date G = new Date(18, 12, 2006);
         G.getDayOfWeek();
     }
 }
